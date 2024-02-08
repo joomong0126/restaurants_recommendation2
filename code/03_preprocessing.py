@@ -13,11 +13,14 @@ stopwords = stopwords + [ '찍다', '양도', '사장', '다녀오다',
 '집다','기고','이담','질도','기질','우리동네','동네','숨다','발견','이집','여기다',
  '나용','나다','추하다','자다','오다','가요','싶다','이예','일산','굳다']
 
+#########################형태소 분류
 okt = Okt()
 cleaned_sentences = []
 for review in df.reviews:
     review = re.sub('[^가-힣]', ' ', review)
     tokened_review = okt.pos(review, stem=True)
+ ########################
+ 
     print(tokened_review)
     df_token = pd.DataFrame(tokened_review, columns=['word', 'class'])
     df_token = df_token[(df_token['class']=='Noun') |
