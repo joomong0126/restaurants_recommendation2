@@ -12,6 +12,31 @@ stopwords = stopwords + [ '찍다', '양도', '사장', '다녀오다',
  '진짜', '절대', '먹다',  '니당다', '다시다','아깝다','번창','직원','찌다','매다',
 '집다','기고','이담','질도','기질','우리동네','동네','숨다','발견','이집','여기다',
  '나용','나다','추하다','자다','오다','가요','싶다','이예','일산','굳다']
+######################
+# from konlpy.tag import Okt
+# import re
+
+# okt = Okt()
+
+# # Custom dictionary with word and its desired part-of-speech tag
+# custom_dictionary = {
+#     '특정키워드': '원하는_품사',  # Replace '특정키워드' and '원하는_품사' with your actual keyword and desired POS
+#     # Add more entries as needed
+# }
+
+# # Update the internal dictionary of the Okt object
+# okt.pos_dict.update(custom_dictionary)
+
+# cleaned_sentences = []
+
+# for review in df.reviews:
+#     review = re.sub('[^가-힣]', ' ', review)
+#     tokened_review = okt.pos(review, stem=True)
+#     cleaned_sentences.append(tokened_review)
+
+# # Optionally, you can remove the custom entries after processing if needed
+# for keyword in custom_dictionary.keys():
+#     del okt.pos_dict[keyword]
 
 #########################형태소 분류
 okt = Okt()
